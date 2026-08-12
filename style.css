@@ -1,0 +1,1296 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --crema: #f8eee9;
+    --crema-claro: #fffaf7;
+    --rosado: #d9a6a6;
+    --rosado-oscuro: #b97878;
+    --dorado: #d6a85f;
+    --marron: #63483e;
+    --oscuro: #352620;
+    --blanco: #ffffff;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--crema);
+    color: var(--oscuro);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    height: 90px;
+    padding: 10px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(60, 40, 35, 0.72);
+    backdrop-filter: blur(12px);
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--dorado);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1800&q=90");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 120px 20px 60px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(30, 20, 18, 0.62),
+            rgba(30, 20, 18, 0.50)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.bienvenida {
+    letter-spacing: 5px;
+    font-size: 15px;
+    color: #f2d7b0;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 105px);
+    letter-spacing: 10px;
+    margin: 10px 0;
+}
+
+.hero h2 {
+    font-size: clamp(24px, 4vw, 40px);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto auto 30px;
+    font-size: 20px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn,
+.btn-reservar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: var(--rosado-oscuro);
+    color: white;
+
+    border: none;
+    padding: 14px 28px;
+
+    border-radius: 40px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn:hover,
+.btn-reservar:hover {
+    transform: translateY(-3px);
+    background: var(--dorado);
+}
+
+.principal {
+    font-size: 17px;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.titulo-seccion span {
+    color: var(--rosado-oscuro);
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.titulo-seccion h2 {
+    font-size: 42px;
+    color: var(--marron);
+    margin: 10px 0;
+}
+
+.titulo-seccion p {
+    color: #735f57;
+}
+
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.contenedor-servicios {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+}
+
+.tarjeta {
+    background: var(--crema-claro);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(80, 50, 40, 0.12);
+
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.contenido-tarjeta {
+    padding: 25px;
+}
+
+.contenido-tarjeta h3 {
+    color: var(--marron);
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.contenido-tarjeta p {
+    color: #725f57;
+    margin-bottom: 15px;
+}
+
+.contenido-tarjeta strong {
+    display: block;
+
+    color: var(--rosado-oscuro);
+
+    font-size: 25px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   GALERÍA
+========================= */
+
+.galeria {
+    background: var(--crema-claro);
+    max-width: 100%;
+}
+
+.galeria-grid {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.foto {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.foto:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   TESTIMONIOS
+========================= */
+
+.testimonios-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.testimonio {
+    background: var(--crema-claro);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(80, 50, 40, 0.10);
+}
+
+.estrellas {
+    color: var(--dorado);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.testimonio p {
+    color: #685650;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonio h4 {
+    color: var(--marron);
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    background: var(--crema);
+}
+
+.contacto-contenedor {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+.contacto-info {
+    background: var(--marron);
+
+    color: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+}
+
+.contacto-info h3 {
+    font-size: 35px;
+    color: #f3d19a;
+    margin-bottom: 15px;
+}
+
+.contacto-info p {
+    margin-bottom: 30px;
+}
+
+.dato {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    margin: 20px 0;
+}
+
+.dato i {
+    font-size: 25px;
+    color: #f3d19a;
+}
+
+#formulario-reserva {
+    background: var(--crema-claro);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(80, 50, 40, 0.10);
+}
+
+#formulario-reserva input,
+#formulario-reserva select,
+#formulario-reserva textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #e0ceca;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    background: white;
+
+    outline: none;
+}
+
+#formulario-reserva input:focus,
+#formulario-reserva select:focus,
+#formulario-reserva textarea:focus {
+    border-color: var(--rosado-oscuro);
+}
+
+#formulario-reserva textarea {
+    resize: vertical;
+}
+
+.enviar {
+    width: 100%;
+    font-size: 16px;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 62px;
+    height: 62px;
+
+    background: #25D366;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+
+    z-index: 2000;
+
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--oscuro);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.footer-logo {
+    color: #f3d19a;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 10px;
+}
+
+.copyright {
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    color: #c8b8b2;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-contenedor {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 75px;
+    }
+
+    .logo img {
+        width: 115px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        background: rgba(53, 38, 32, 0.97);
+
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        letter-spacing: 5px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .seccion {
+        padding: 70px 18px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 32px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .foto {
+        height: 260px;
+    }
+
+    .whatsapp {
+        width: 56px;
+        height: 56px;
+        font-size: 30px;
+        right: 18px;
+        bottom: 18px;
+    }
+}
+/* =========================================
+   SPA ECLAT - DISEÑO DE SERVICIOS
+   ========================================= */
+
+.servicios {
+    padding: 90px 5%;
+    background: #fbf3ef;
+}
+
+.titulo-seccion {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.titulo-seccion span {
+    display: block;
+    color: #b98667;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion h2 {
+    font-size: 42px;
+    color: #5b4035;
+    margin: 0 0 15px;
+}
+
+.titulo-seccion p {
+    color: #80665b;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.contenedor-servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.tarjeta {
+    background: #fffaf7;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(91, 64, 53, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(91, 64, 53, 0.18);
+}
+
+.imagen-servicio {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.imagen-servicio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.tarjeta:hover .imagen-servicio img {
+    transform: scale(1.05);
+}
+
+.contenido-tarjeta {
+    padding: 28px;
+}
+
+.contenido-tarjeta h3 {
+    color: #5b4035;
+    font-size: 23px;
+    margin: 0 0 14px;
+}
+
+.contenido-tarjeta p {
+    color: #80665b;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 76px;
+}
+
+.detalle {
+    margin-top: 20px;
+    margin-bottom: 22px;
+}
+
+.detalle span {
+    display: block;
+    color: #80665b;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.detalle strong {
+    display: block;
+    color: #b9786e;
+    font-size: 27px;
+}
+
+.boton-servicio {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 13px 20px;
+    background: #b98667;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.boton-servicio:hover {
+    background: #9d6b51;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ADAPTACIÓN PARA TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .contenedor-servicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   ADAPTACIÓN PARA CELULAR
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .servicios {
+        padding: 65px 20px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 32px;
+    }
+
+    .titulo-seccion p {
+        font-size: 15px;
+    }
+
+    .contenedor-servicios {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .imagen-servicio {
+        height: 230px;
+    }
+
+    .contenido-tarjeta {
+        padding: 23px;
+    }
+
+    .contenido-tarjeta h3 {
+        font-size: 21px;
+    }
+
+}
+/* ================================
+   EFECTO HOVER - TARJETAS
+================================ */
+
+.tarjeta {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================================
+   EFECTO ZOOM EN LAS FOTOGRAFÍAS
+================================ */
+
+.imagen-servicio {
+    overflow: hidden;
+}
+
+.imagen-servicio img {
+    transition: transform 0.5s ease;
+}
+
+.tarjeta:hover .imagen-servicio img {
+    transform: scale(1.08);
+}
+
+
+/* ================================
+   DISEÑO PARA CELULAR
+================================ */
+
+@media (max-width: 768px) {
+
+    .contenedor-servicios {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
+
+    .imagen-servicio img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+}
+/* ================================
+   GALERÍA SPA ECLAT
+================================ */
+
+.galeria {
+    padding: 90px 6%;
+    background: #fff8f4;
+}
+
+.titulo-galeria {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.titulo-galeria span {
+    color: #c58b82;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.titulo-galeria h2 {
+    margin: 10px 0 15px;
+    font-size: 42px;
+    color: #70483f;
+}
+
+.titulo-galeria p {
+    color: #795f59;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.galeria-contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.foto-galeria {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(80, 50, 40, 0.12);
+}
+
+.foto-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.foto-galeria:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ================================
+   GALERÍA EN CELULAR
+================================ */
+
+@media (max-width: 768px) {
+
+    .galeria {
+        padding: 65px 20px;
+    }
+
+    .titulo-galeria h2 {
+        font-size: 32px;
+    }
+
+    .galeria-contenedor {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .foto-galeria {
+        height: 280px;
+    }
+}
+/* ==================== TESTIMONIOS ==================== */
+
+.testimonios {
+    padding: 90px 7%;
+    background: #fdf4ef;
+    text-align: center;
+}
+
+.testimonios .titulo-seccion {
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.testimonios .titulo-seccion span {
+    display: block;
+    color: #c98f86;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.testimonios .titulo-seccion h2 {
+    font-size: 38px;
+    color: #5b3a35;
+    margin-bottom: 15px;
+}
+
+.testimonios .titulo-seccion p {
+    color: #87665f;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.contenedor-testimonios {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.tarjeta-testimonio {
+    background: #fffaf7;
+    padding: 35px 30px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(91, 58, 53, 0.10);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-testimonio:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(91, 58, 53, 0.16);
+}
+
+.estrellas {
+    color: #d9a441;
+    font-size: 23px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-testimonio p {
+    color: #70534d;
+    font-size: 16px;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.tarjeta-testimonio h3 {
+    color: #5b3a35;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.tarjeta-testimonio span {
+    color: #c98f86;
+    font-size: 14px;
+}
+
+
+/* ==================== TESTIMONIOS EN CELULAR ==================== */
+
+@media (max-width: 768px) {
+
+    .testimonios {
+        padding: 70px 20px;
+    }
+
+    .testimonios .titulo-seccion h2 {
+        font-size: 30px;
+    }
+
+    .testimonios .titulo-seccion p {
+        font-size: 15px;
+    }
+
+    .contenedor-testimonios {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta-testimonio {
+        padding: 30px 25px;
+    }
+}
+/* ================================
+   CONTACTO SPA ECLAT
+================================ */
+
+.contacto {
+    padding: 90px 6%;
+    background: #fffaf7;
+}
+
+.titulo-contacto {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.titulo-contacto span {
+    display: block;
+    color: #c98f86;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.titulo-contacto h2 {
+    color: #5b3a35;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.titulo-contacto p {
+    color: #80645d;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.contacto-contenedor {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 35px;
+}
+
+.informacion-contacto,
+.formulario-contacto {
+    background: #fdf3ee;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(91, 58, 53, 0.08);
+}
+
+.informacion-contacto h3,
+.formulario-contacto h3 {
+    color: #5b3a35;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.informacion-contacto > p {
+    color: #765b54;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.dato-contacto {
+    margin-bottom: 20px;
+}
+
+.dato-contacto strong {
+    display: block;
+    color: #5b3a35;
+    margin-bottom: 5px;
+}
+
+.dato-contacto span {
+    color: #80645d;
+}
+
+.boton-whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 13px 22px;
+    background: #b98667;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.boton-whatsapp:hover {
+    background: #9d6b51;
+    transform: translateY(-2px);
+}
+
+.formulario-contacto form {
+    display: grid;
+    gap: 15px;
+}
+
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ead8d0;
+    border-radius: 12px;
+    background: #fffdfb;
+    color: #5b3a35;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto select:focus,
+.formulario-contacto textarea:focus {
+    border-color: #c98f86;
+}
+
+.boton-enviar {
+    border: none;
+    padding: 14px 20px;
+    border-radius: 30px;
+    background: #b98667;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton-enviar:hover {
+    background: #9d6b51;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   CONTACTO EN CELULAR
+================================ */
+
+@media (max-width: 768px) {
+
+    .contacto {
+        padding: 70px 20px;
+    }
+
+    .titulo-contacto h2 {
+        font-size: 30px;
+    }
+
+    .contacto-contenedor {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .informacion-contacto,
+    .formulario-contacto {
+        padding: 28px 22px;
+    }
+}
+/* ========================================
+   BOTÓN FLOTANTE DE WHATSAPP
+======================================== */
+
+.whatsapp-flotante {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+    color: white;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
+
+    z-index: 9999;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.whatsapp-flotante span {
+    font-size: 30px;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.12);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.30);
+}
+
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .whatsapp-flotante {
+        width: 55px;
+        height: 55px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .whatsapp-flotante span {
+        font-size: 27px;
+    }
+
+}
